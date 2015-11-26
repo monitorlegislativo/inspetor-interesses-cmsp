@@ -3,7 +3,7 @@ import csv, os
 import md5
 
 #Define elasticsearch database
-url = "http://thedatahub.org/api/data/2ae8957f-a6a8-405e-95ea-a64e908da1ff"
+url = "http://127.0.0.1:9200/inspetor/i"
 client = datastore.client.DataStoreClient(url)
 
 encoding = 'iso-8859-1'
@@ -65,17 +65,7 @@ def funkystuff(reader):
     for p in reader:
         yield p
 
-client.delete()
 print "Delete done"
-
-client.mapping_update(
-{ "properties" :
-    {
-        "autores" : { "type" : "string", "analyzer" : "keyword" },
-        "assuntos" : { "type" : "string", "analyzer" : "keyword" },
-        "DataProj" : { "type" : "date", "format" : "dd/MM/YYYY" }
-    } 
-})
 print 'Mapping done'
 
 client.upsert(funkystuff(projetos))

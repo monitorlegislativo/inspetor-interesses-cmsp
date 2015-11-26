@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="./css/estilo.css" type="text/css" media="screen" />
     <script language="javascript" type="text/javascript" src="./vendor/jquery.js"></script>
     <script language="javascript" type="text/javascript" src="./vendor/jquery-ui/jquery-ui-1.8.20.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="./js/config.js"></script>
     <script language="javascript" type="text/javascript" src="./js/main.js"></script>
 </head>
 
@@ -43,7 +44,7 @@
             };
       
       $.ajax({
-        url: "http://thedatahub.org/api/data/2ae8957f-a6a8-405e-95ea-a64e908da1ff/_search?source=" + JSON.stringify(q),
+        url: SETTINGS['server'] + "/inspetor/i/_search?source=" + JSON.stringify(q),
         type: "GET",
         dataType: "json",
         success: function(dados) {

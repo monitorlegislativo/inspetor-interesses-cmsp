@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./vendor/bootstrap/2.0.0/bootstrap.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="./css/estilo.css" type="text/css" media="screen" />
     <script language="javascript" type="text/javascript" src="./vendor/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="./js/config.js"></script>
     <script language="javascript" type="text/javascript" src="./js/main.js"></script>
 	<!--<link rel="shortcut icon" href="img/favico.png" type="img/x-icon" /> -->
     <script>
@@ -26,7 +27,7 @@
     }
     
     my = {};
-    my.base_url = "http://thedatahub.org/api/data/2ae8957f-a6a8-405e-95ea-a64e908da1ff";
+    my.base_url = SETTINGS["server"] + "/inspetor/i";
     my.termos_comuns = [];
     my.termos_unicos = [];
     my.query = { "query" : {
